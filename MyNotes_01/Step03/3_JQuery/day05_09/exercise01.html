@@ -1,0 +1,104 @@
+<!-- 实现列表中的高亮显示 -->
+<!-- 效果：随着鼠标的移动，表格背景颜色和字体颜色发生改变，焦点效果 -->
+<!-- 思路：1. 遍历整个列表
+          2. 获取每一行
+          3. 给每一行绑定两个事件
+          4. 在事件中实现高亮显示 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习1</title>
+    <style>
+        ul{
+            width: 600px;
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            border: solid 5px grey;
+        }
+        ul>li{
+            border-bottom:solid 1px #cee2df;
+            overflow: hidden;
+        }
+        ul li span{
+            border-right:solid 1px #cee2df;
+            padding: 5px 9px;
+            width: 101px;
+            float: left;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 创建列表，七行五列 -->
+    <ul>
+        <li>
+            <span>Produce</span>
+            <span>Price</span>
+            <span>ID Code</span>
+            <span>Quality</span>
+            <span>Exp Date</span>
+        </li>
+        <li>
+            <span>Pro 1</span>
+            <span>52 $</span>
+            <span>4587</span>
+            <span>Good</span>
+            <span>02/02/2009</span>
+        </li>
+        <li>
+            <span>Pro 1</span>
+            <span>52 $</span>
+            <span>4587</span>
+            <span>Good</span>
+            <span>02/02/2009</span>
+        </li>
+        <li>
+            <span>Pro 1</span>
+            <span>52 $</span>
+            <span>4587</span>
+            <span>Good</span>
+            <span>02/02/2009</span>
+        </li>
+        <li>
+            <span>Pro 1</span>
+            <span>52 $</span>
+            <span>4587</span>
+            <span>Good</span>
+            <span>02/02/2009</span>
+        </li>
+        <li>
+            <span>Pro 1</span>
+            <span>52 $</span>
+            <span>4587</span>
+            <span>Good</span>
+            <span>02/02/2009</span>
+        </li>
+        <li>
+            <span>Pro 1</span>
+            <span>52 $</span>
+            <span>4587</span>
+            <span>Good</span>
+            <span>02/02/2009</span>
+        </li>
+    </ul>
+
+    <script>
+        // 首先获取除第一行以外的行集合 
+        console.log($("ul>:not(li:first)li")) // 除去第一项以外的 li
+        $("ul>:not(li:first)li").each(function(index,element){
+            // 将每一项元素转成 JQ 对象
+            $(element).on("mouseover",function(){
+                $(this).css({"background-color":"#aaa","color":"#fff"})
+            }).on("mouseout",function(){
+                $(this).css({"background-color":"white","color":"black"})
+            })
+        })
+    </script>
+</body>
+
+</html>

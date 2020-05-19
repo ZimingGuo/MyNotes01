@@ -1,0 +1,34 @@
+<!-- demo01:引入try catch -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo01</title>
+    <style>
+        #tip{
+            /* display 是 none 就表示隐藏 */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- display 的默认属性是“空”,表示的是显示 = block 也是表示显示 -->
+    <!-- 当 display 的值是 none 的时候，就是隐藏的 -->
+    <div id="tip">你好！</div>
+    <script>
+        /*
+        var a="ok"
+        // 解决问题
+        try {
+            console.log(b)
+        } catch (error) {
+            console.log(error.message)
+        }
+        console.log(a)
+        */ 
+        var a=document.getElementById("tip")
+        console.log(a.style)
+    </script>
+</body>
+</html>

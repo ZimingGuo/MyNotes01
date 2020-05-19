@@ -1,0 +1,50 @@
+<!-- demo03:三目表达式练习 -->
+<!-- 要求：
+        在文本框内输入内容，点击按钮之后获取内容，判断输入内容的类型
+        如果是字符串，就输出验证成功；要是数字，显示输入不正确 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo03</title>
+    <style>
+        #check .txt{
+            padding: 5px;
+        }
+        #check .btn{
+            margin: 8px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="check">
+        <h3>输入文字的验证</h3>
+        <!-- 想获取内容的话就要设置一个 id -->
+        <input type="text" id="txt" class="txt" placeholder="请输入字符串">
+        <div class="btn">
+            <!-- 把按钮用 div 元素包裹起来，因为 button 是个块元素 -->
+            <button onclick="bb()">验证</button> <!-- 点击按钮就会进行验证 -->
+        </div>
+        <!-- 下面这个 div 用于存放判断的结果 -->
+        <div id="result">
+        </div>
+    </div>
+    <!-- JS 代码一般是在所有内容写完之后再写，保证所有元素都被解析完成后再来获取 -->
+    <script>
+        // bb 就可以代码要执行的代码块的名称，直接写bb就可以
+        // 记得在写 function 的时候，一定要加上括号
+        function bb() {
+        // 分别获取元素对象，并保存在元素当中
+        var txt01=document.getElementById("txt") // 根据 id 获得文本变量
+        var result=document.getElementById("result") // 根据 id 获得结果所给的对象
+        // 根据文本框获取的值进行判断
+        var num01=txt01.value
+        // 如果是数字返回数字，如果不是就返回 NaN
+        // isNan(num) 如果是数字，返回 false；如果不是数字，返回 true
+        var isNum=isNaN(Number(num01))?false:true // 对获取到的值进行转换 & 用三目表达式判断结果是否为数字 
+        result.innerText=isNum==true?'这是一个数字，输入错误':'it is a char，approved'
+        }
+        </script>
+</body>
+</html>

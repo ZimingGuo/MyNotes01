@@ -1,0 +1,67 @@
+<!-- demo03:fixed 固定定位练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo03:fixed 固定定位练习</title>
+    <style>
+        *{
+            /* 星号代表页面中的全部元素 */
+            margin: 0px;
+            padding: 0px;
+        }
+        #top,#bottom{
+            border: solid 0px red;
+            text-align: center;
+            background-color: rgb(1, 32, 79);
+            /* 有了背景色之后尽量不要加上边框 */
+            color: white;
+            padding: 8px 10px; /* 先上下 后左右 */
+            position: fixed;
+            /* 手动设置高度：相对于浏览器的100% */
+            width: 100%;
+            height: 25px;
+            
+        }
+        #top{
+            top: 0px;
+        }
+        #bottom{
+            bottom: 0px;
+        }
+        #left,#right{
+            border: solid 1px red;
+            width: 80px;
+            height: 150px;
+            background-color: orange;
+            position: fixed;
+        }
+
+        /* 下面两个 fixed 都是会一直悬浮在上面 */
+        #left{
+            /* 这些距离都是相对于浏览器来说的 */
+            left: 0px;
+            top: 180px;
+        }
+        #right{
+            /* 这些距离都是相对于浏览器来说的 */
+            right: 0px;
+            top: 300px;
+        }
+    </style>
+<body>
+    <div id="top">
+        Web 开发，功能很强大
+    </div>
+    <div style="margin-top: 41px;">我是一个标题栏</div>
+    <div id="left">
+    </div>
+    <div id="right">
+    </div>
+    <div id="bottom">
+        这是一条显示在底部的内容
+    </div>
+    <div style="height: 2000px;"></div>
+</body>
+</html>

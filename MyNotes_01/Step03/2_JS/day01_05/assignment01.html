@@ -1,0 +1,62 @@
+<!-- 作业01 -->
+<!-- 以后总是这三个步骤：
+        1）添加元素
+        2）写元素的样式 
+        3）微调 -->
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>作业01</title>
+            <style>
+                #outline{
+                    border: solid 0px red;
+                    width: 122px;
+                    height: 297px;
+                    margin: 0 auto;
+                }
+                /* img{
+                    border: solid 0px red;
+                    margin: 0px;
+                    padding: 0px;
+                } */
+                #pic01{
+                    margin-bottom: 0px;
+                    height: 274px;
+                }
+                #pic02{
+                    float: right;
+                }
+                #img02{
+                    margin-top: -3px;
+                    cursor: pointer;
+                }
+            </style>
+        </head>
+        <body>
+            <div id="outline">
+                <div id="pic01">
+                    <img id="img01" src="img02.png">
+                </div>
+                <div id="pic02">
+                    <img id="img02" src="img01.png">
+                </div>
+            </div>
+
+            <script>
+                var ALL=document.getElementById("outline")
+                var Pic01=document.getElementById("img01")
+                var Pic02=document.getElementById("img02")
+
+                Pic02.onclick=function(){
+                    // 添加一个询问对话框
+                    var yesno=confirm("你真的想要关闭这个广告吗？")
+                    // 如果选择了确定要关闭，则隐藏广告
+                    if(yesno==true){
+                        ALL.style.display="none"
+                    }
+                }
+            </script>
+        </body>
+        </html>

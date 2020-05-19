@@ -1,0 +1,57 @@
+<!-- demo03 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo03</title>
+    <!-- 导入 JQ 框架 -->
+    <script src="js/jquery.min.js"></script>
+    <style>
+        ul{
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            width: 100px;
+        }
+        ul>li{
+            border-bottom: dashed 1px red;
+            padding: 10px 5px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+    </ul>
+    <button id="btn">隐藏</button>
+    <script>
+        // $("li:eq(2)").css("font-size","30px");
+        // $("li:first,li:last").css("font-size","10px").css("color","red");
+        // 通过 JQ 实现这种隔行变色很方便了
+        $("li:odd").css("background-color","orange");
+        $("li:even").css("background","grey");
+
+        $("#btn").on("click",function(){
+            if($("#btn").text()=="隐藏"){
+                // $("ul").hide(2000,function(){
+                // $("ul").slideUp(2000,function(){
+                $("ul").slideUp(2000,function(){
+                $("#btn").text("显示")
+                })
+            }
+            else{
+                // $("ul").show(2000,function(){
+                // $("ul").slideDown(2000,function(){
+                $("ul").slideDown(2000,function(){
+                $("#btn").text("隐藏")
+                })
+            }
+        })
+    </script>
+</body>
+</html>

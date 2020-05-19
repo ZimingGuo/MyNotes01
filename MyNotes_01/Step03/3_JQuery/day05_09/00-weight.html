@@ -1,0 +1,38 @@
+<!-- 样式中的权重问题 -->
+<!-- 如果后面元素的权重低，没有办法实现，怎么办？
+         -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            color: white;
+        }
+        #aa{
+            background-color: blue;
+        }
+        .red{
+            background-color: red !important;
+            /* 加上了 !important 就会提高权重 */
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="aa">
+        <!-- 直接给 id 的方式权重是很大的，除了内联就是他了，大于class -->
+        this is a test content 
+    </div> 
+    <script>
+        // 此时不会触发，因为 id 的权重是最高的
+        $("#aa").on("click",function(){
+            console.log("事件已触发")
+            $("#aa").toggleClass("red")
+        })
+        
+    </script>
+</body>
+</html>

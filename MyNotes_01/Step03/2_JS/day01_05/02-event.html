@@ -1,0 +1,68 @@
+<!-- demo02:事件的练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo02</title>
+</head>
+<body>
+    <div id="tip">
+    </div>
+
+    <div>
+        <input type="text" id="txt">
+    </div>
+
+    <script>
+        /*
+        // 大小写不同，表达的意思也是不同的
+        a=1;
+        A=1;
+
+        // 定义变量
+        a1=2; // 全局性的变量
+        var a2=3; // 页面的局部变量 
+        var a3,a4,a5; // 定义多个变量，并没有复赋值
+        a3=4;a4=5;a5=6; // 先定义，再赋值
+        // 定义变量
+        var a6=a7=a8=0; 
+        var a9=10,a10=12;
+
+        // 定义一个常量
+        const PI=3.1415926 // 现在的PI也是相当于一个对象，调用方法来显示保留的位数
+        // 只保留两位并显示在页面 
+        alert(PI.toFixed(2));
+
+        // 定义一个字符变量 
+        var strName='hello world';
+        var isSave=false;
+        */
+        // 已经取到了这两个元素了 
+        // a01=document.getElementById("txt"); // 获取 txt 文本元素对象 
+        // b01=document.getElementById("tip"); // 获取 div 元素对象
+        // b01.innerText=a01.value; // 将文本框中输入的值，赋值给 div 元素 
+        // 如果想设置 div 显示的值，用 innerText，如果想取文本框里的值，要用 value
+    </script>
+    <!-- 直接写button上显示的内容 -->
+    <!-- <button onclick='a=document.getElementById("tip");a.innerText=typeof(isSave);'>点击我一下</button> -->
+    <!-- 代码的执行顺序很重要，是一行一行往下走的 -->
+    <!-- <button onclick='a01=document.getElementById("txt");b01=document.getElementById("tip");b01.innerText=a01.value;'>点击我一下</button> -->
+    <script>
+        // // 首先获取指定的id元素，得到的元素要返回给一个变量，保存起来（相当于是创建了一个对象，并赋给 a）
+        // // 获取这个id的元素指定的对象，现在 a 就是一个对象了
+        // a=document.getElementById("tip"); // 括号里面写的是id
+        // // 把这个元素里面显示的文本设置为...
+        // a.innerText="hello world!";
+        // var a=2;
+        // console.log(a++);
+        // console.log(a)
+
+        // var b='A',c='a';
+        // console.log(c.charCodeAt(0)) // 这个函数用来查询字符的 Unicode 值
+        // console.log(b>c) // 字符串之间的比较是比较 Unicode 的值 
+
+        
+    </script>
+</body>
+</html>

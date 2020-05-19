@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单练习</title>
+</head>
+<body>
+<!--  创建一个表单  -->
+<form action="#"> <!-- # 表示数据都会提交到本地 -->
+    <div>
+        <label for="name">用户名:</label>
+        <!-- 占位符 -->
+        <input type="text"
+               id="name"
+               placeholder="请输入用户名"
+               name="name">
+    </div>
+
+    <!--  密码隐藏  -->
+    <div>
+        <label for="password">密&nbsp;&nbsp;&nbsp;码:</label>
+        <input type="password"
+               placeholder="请输入密码"
+               id="password"
+               name="password">
+    </div>
+
+    <!--  下拉列表，option里面代表的是选项  -->
+    <div>
+        <label for="xl">学&nbsp;&nbsp;&nbsp;历:&nbsp;&nbsp;</label>
+        <!--  下拉列表框元素，用option设置列表项，value是选项值  -->
+        <select name="学历" id="xl">
+            <option value="1">大学</option>
+            <option value="2">中学</option>
+            <option value="3">小学</option>
+        </select>
+    </div>
+
+    <!--  单选按钮元素  -->
+    <div>
+        <label for="sex">性&nbsp;&nbsp;&nbsp;别:</label>
+        <!--  在里面加上相同的 name 后，就可以做到互斥  -->
+        男<input type="radio"
+                name="sex"
+                value="1"
+                checked> <!--  可以实现默认选项：男  -->
+        女<input type="radio"
+                name="sex"
+                value="2">
+    </div>
+
+    <!-- 多选对号按钮 -->
+    <div>
+        <label for="hobby">Hobby:</label>
+        <!-- 一般复选都是多个选择，所以每一个选项的命名都应该有所区别 -->
+        编程 <input type="checkbox" name="hobby1"> <!-- checkbox 就是表示多项选择的 -->
+        健身 <input type="checkbox" name="hobby2">
+        摄影 <input type="checkbox" name="hobby3">
+        烹饪 <input type="checkbox" name="hobby4">
+        红酒 <input type="checkbox" name="hobby5">
+    </div>
+
+    <!-- 可以输入多行多列的输入文本框 -->
+    <div>
+        <label for="demo">introduction</label>
+        <!-- 可以设置行和列 -->
+        <textarea
+                name="简介"
+                id="demo"
+                cols="30"
+                rows="10">
+        </textarea>
+    </div>
+
+    <!-- 设置提交按钮 -->
+    <div>
+        <!-- 表示内容都会提交到本地 -->
+        <input type="submit" value="注册"> <!-- 按钮上的文字写在value里 -->
+        <input type="reset" value="Reset">
+    </div>
+
+    <!-- 加上了 name 之后所有的数据都可以保证被接收了 -->
+
+</form>
+</body>
+</html>

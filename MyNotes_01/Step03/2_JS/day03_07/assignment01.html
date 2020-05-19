@@ -1,0 +1,128 @@
+<!-- 作业2:全选/单选 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业2</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        p{
+            padding: 0px;
+            margin: 0px;
+            border: solid 0px red;
+            float: left;
+            position: absolute;
+            left: 42px;
+            top: 0px;
+            padding-top: 1px;
+        }
+        .choose{
+            border: solid 0px red;
+            border-right: solid 1px grey;
+            width: 25px;
+            height: 25px;
+            margin-left: 7px;
+            text-align: left;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        li{
+            border: solid 1px grey;
+            width: 240px;
+            height: 25px;
+            position: relative;
+            border-bottom: 0px;
+        }
+        .p_txt{
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <!-- 注：用 table 还是 ul/li ？ -->
+    <ul>
+        <li style="border-bottom:  solid 1px grey;">
+            <div class="choose">
+                <input type="checkbox"" id="input01">
+            </div>
+            <p style="font-weight: 900;">
+                编程语言
+            </p>
+        </li>
+        <li>
+            <div class="choose">
+                <input type="checkbox" id="input02">
+            </div>
+            <p class="p_txt">
+                C
+            </p>
+        </li>
+        <li>
+            <div class="choose">
+                <input type="checkbox" id="input03">
+            </div>
+            <p class="p_txt">
+                Java
+            </p>
+        </li>
+        <li>
+            <div class="choose">
+                <input type="checkbox" id="input04">
+            </div>
+            <p class="p_txt">
+                PHP
+            </p>
+        </li>
+        <li>
+            <div class="choose">
+                <input type="checkbox" id="input05">
+            </div>
+            <p class="p_txt">
+                JavaScript
+            </p>
+        </li>
+        <li>
+            <div class="choose">
+                <input type="checkbox" id="input06">
+            </div>
+            <p class="p_txt">
+                C++
+            </p>
+        </li>
+        <li style="border-bottom: solid 1px grey;">
+            <div class="choose">
+                <input type="checkbox" id="input07">
+            </div class="p_txt">
+            <p class="p_txt">
+                Python
+            </p>
+        </li>
+    </ul>
+    <script>
+        // 首先获取各个选择按钮，并保存在一个变量里面
+        // 定义一个函数来做这件事更好一点 
+        function $$(id){
+            return document.getElementById(id)
+        }
+
+        // 用函数获取每一个复选框元素
+        var c01=$$("input01")
+        var c02=$$("input02")
+        var c03=$$("input03")
+        var c04=$$("input04")
+        var c05=$$("input05")
+        var c06=$$("input06")
+        var c07=$$("input07")
+
+        // 编写逻辑
+        // 如何表示 radio 已经被选中了？
+        c01.onclick=function(){
+
+        }
+
+    </script>
+</body>
+</html>

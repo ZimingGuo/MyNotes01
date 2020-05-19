@@ -1,0 +1,43 @@
+<!-- demo05:math对象练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo05</title>
+</head>
+<body>
+    <script>
+        var num=123.6563;
+        // 向上取整
+        console.log(Math.ceil(num));
+        // 向下取整
+        console.log(Math.floor(num))
+        // 四舍五入取整 
+        console.log(Math.round(num))
+
+
+        // 生成随机数 0-1 之间
+        console.log(Math.floor(Math.random()*10));
+
+        function createCode(len){
+        // 生成随机码的函数
+        // 定义一个数组，保存所有可见的字符
+        var arr01=[0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','A','B','C','D','E','F','G'];
+        // 随机生成一个可以从数组中取到的下标值
+        var index=Math.floor(Math.random()*arr01.length) // 注意数组的长度的表达方式,和python不一样
+        // 输出随机生成的下标对应值 
+        console.log(arr01[index]);
+        var v01=""; // 新建一个字符串，用于保存字符串
+        for(var i=1;i<(len+1);i++){
+            var index=Math.floor(Math.random()*arr01.length) 
+            v01+=arr01[index] // 将每一次生成的数字组合起来成为验证码
+        }
+        return v01.toUpperCase();
+        // console.log(v01.toUpperCase()); // 将验证码输出
+        }
+
+        console.log(createCode(11));
+    </script>
+</body>
+</html>

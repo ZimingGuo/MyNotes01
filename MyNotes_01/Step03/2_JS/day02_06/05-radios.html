@@ -1,0 +1,63 @@
+<!-- demo05:点击不同按钮，显示不同图片 -->
+<!-- radio是可以放到表单里，也可以单独使用 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo05</title>
+    <style>
+        #pic{
+            width: 300px;
+            margin: 0 auto;
+            border: solid 0px red;
+        }
+        #pic input{
+            margin-right: 45px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 先写元素，再写样式，最后写逻辑 -->
+    <div id="pic">
+        <div class="img">
+            <img id="img" width="300px" src="gm1.jpg" alt="">
+        </div>
+        <fieldset>
+            <legend>选择按钮</legend>
+            <!-- radio 的 name 相同时，是可以相互排斥的 -->
+            <input checked type="radio" name="pic" id="pic01"> <!-- checked 表示默认选中第一个 -->
+            <input type="radio" name="pic" id="pic02">
+            <input type="radio" name="pic" id="pic03">
+            <input type="radio" name="pic" id="pic04">
+        </fieldset>
+    </div>
+    <!-- 更改所显示的图片其实就是更改图片元素里面的 src 的属性值 -->
+    <script>
+        // 获取单选按钮对象，分别保存在变量中
+        var button_Pic01=document.getElementById("pic01")
+        var button_Pic02=document.getElementById("pic02")
+        var button_Pic03=document.getElementById("pic03")
+        var button_Pic04=document.getElementById("pic04")
+
+        var imgShow=document.getElementById("img")
+        // 绑定元素的单击事件
+        // 先获取元素对象，通过“点”访问元素对象的事件属性和方法
+        button_Pic01.onclick=function(){
+            // 用一个大括号包裹代码块
+            // 改变图片的显示来源 
+            // setAttribute 是用来设置特定属性名称，先写属性名称，后写所要设置的属性
+            imgShow.setAttribute("src","gm1.jpg")
+        }
+        button_Pic02.onclick=function(){
+            imgShow.setAttribute("src","gm2.jpg")
+        }
+        button_Pic03.onclick=function(){
+            imgShow.setAttribute("src","gm3.jpg")
+        }
+        button_Pic04.onclick=function(){
+            imgShow.setAttribute("src","gm4.jpg")
+        }
+    </script>
+</body>
+</html>

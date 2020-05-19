@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业1</title>
+    <style>
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        #news{
+            width: 834px;
+            border-top: solid grey 4px;
+            border-left: solid gray 1px;
+            border-right: solid gray 1px;
+            border-bottom: solid gray 1px;
+            padding: 0 15px;
+        }
+        /* 将内联元素(span)转换成块元素 */
+        span{
+            display: inline-block;
+            /* 现在就变成了类联性质的块元素 */
+            width: 30px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        ul>li{
+            border-bottom: solid 1px gray;
+            padding: 10px;
+        }
+        .lastline{
+            /* 实现最后一个元素没有下边框，这样最后一条线就不会看起来很粗了 */
+            border: none;
+        }
+    </style>
+</head>
+<body style="font-size: medium;">
+    <!-- 一般在列表的外面用一个 div 包裹，这样易于操作列表等 -->
+    <div id="news">
+        <!-- 创建一个无序列表 -->
+        <!-- 看到 ul 之后就要下意识去除默认样式 -->
+        <ul>
+            <li>
+                <span>1</span> <!-- 一般把这个数字单独包裹起来，方便过后处理 -->
+                媒体：今天是五一假期的第二天
+            </li>
+            <li>
+                <span>2</span> <!-- 一般把这个数字单独包裹起来，方便过后处理 -->
+                媒体：今天是五一假期的第二天
+            </li>
+            <li>
+                <span>3</span> <!-- 一般把这个数字单独包裹起来，方便过后处理 -->
+                媒体：今天是五一假期的第二天
+            </li>
+            <li class="lastline">
+                <span>4</span> <!-- 一般把这个数字单独包裹起来，方便过后处理 -->
+                媒体：今天是五一假期的第二天
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

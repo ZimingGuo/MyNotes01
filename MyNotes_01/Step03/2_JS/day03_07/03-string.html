@@ -1,0 +1,64 @@
+<!-- demo03:string 对象的练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo03</title>
+</head>
+<body>
+    <div id="tip"></div>
+    <input type="text" id="txt">
+    <!-- 在文本框中输入内容的时候，其实是有事件发生的，叫做 input 事件，只有文本框元素才有 -->
+    <script>
+        // 获取 文本框 和 div 元素并保存在变量中
+        var objTip=document.getElementById('tip')
+        var objTxt=document.getElementById('txt')
+
+        // 绑定文本框元素的事件
+        // input 就是在输入内容的时候触发的事件
+        objTxt.oninput=function(){
+            // 触发的事件为：把 txt 的内容给到 tip 里面
+            // objTip.innerText=objTxt.value.toUpperCase() // 都变成大写的
+            // objTip.innerText=objTxt.value.charAt(0) // 只显示第一个字母（特定的字符）
+            // 新建变量获取查询结果，查询 a 的位置
+            // var sp=objTxt.value.indexOf('a'); // 返回坐标
+            // if(sp!=-1){
+            // var s=objTxt.value.substring(sp,sp+1); // 这样就把 a 取出来了
+            // objTip.innerText=s; // 把最终得到的结果给 tip 作为显示
+            // }
+
+            // 把头两位取出来
+            // var str='abcdefg';
+            // var s=str.substring(0,2); // 从 0 开始取到 2
+            // var s=str.substr(0,3); // 从 0 开始取两个元素
+            // console.log(s);
+        }
+
+        var str='ie=utf-8&f=3&rsv_bp=1&rsv_idx=1&tn=baidu';
+        var arr2=str.split('&');
+        var arr4=[];
+        //遍历分割后的数组
+        for(var i=0;i<arr2.length;i++){
+            // console.log(arr2[i])
+            arr3=arr2[i].split('=');
+            var _obj={};
+            _obj.name=arr3[0];
+            _obj.value=arr3[1];
+            arr4.push(_obj);
+            // console.log(arr3)
+        }
+        console.log(arr4.toString());
+        console.log(arr4[0].name);
+        console.log(arr4[0].value);
+        // console.log(arr3);
+        // console.log(arr3.toString());
+        // if(arr3[0]='f'){
+        //         console.log(arr3[1])
+        //         break
+        //     }
+
+
+    </script>
+</body>
+</html>

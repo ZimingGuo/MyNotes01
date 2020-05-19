@@ -1,0 +1,28 @@
+<!-- demo02:history 对象练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo02</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">Baidu</a>
+    <script>
+        var history01=window.history;
+        console.log(history01);
+        // console.log(history.length)
+
+        // 显示当前地址栏的信息（URL）
+        // var location01=window.location;
+        // console.log(location01.href);
+
+        // 重新刷新一次页面 
+        // location01.reload(false); // true 表示不需要缓存刷新，false 表示需要缓存刷新
+
+    </script>
+    <button onclick="window.history.back()">Back</button>
+    <button onclick="window.history.forward()">Forward</button>
+    <button onclick="window.location.reload()">刷新当前页</button>
+</body>
+</html>

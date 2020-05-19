@@ -1,0 +1,81 @@
+<!-- 作业00：edited -->
+<!-- 根据按钮滑动显示图片(大图滚动) -->
+<!-- 添加页面元素，添加样式，再微调 -->
+
+<!-- 中心思想在于：把图片地址保存在数组，用索引的方式调取 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业0</title>
+    <style>
+        #pics{
+            width: 739px;
+            height: 419px;
+            border: solid 0px red;
+            margin: 0 auto;
+            position: relative;
+        }
+        #pics .b_left{
+            position: absolute;
+            top: 47%;
+            left: 0px;
+        }
+        #pics .b_right{
+            top: 47%;
+            right: 0px;
+            position: absolute;
+        }
+        .b_left,.b_right{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="pics">
+        <a href="https://www.baidu.com">
+            <img id="img01" src="gm1.jpg">
+        </a> 
+        <div class="b_left">
+            <img src="l1.png">
+        </div>
+        <div class="b_right">
+            <img src="r1.png">
+        </div>
+    </div>
+    <script>
+        // 整体思想：新建一个数组，保存全部图片地址，点击按钮移动下标，从而更换图片。
+        var arrImage=['gm1.jpg','gm2.jpg','gm3.jpg','gm4.jpg','gm5.jpg']
+        // 获取点击按钮元素
+        var btnR=document.getElementsByClassName("b_right")[0];
+        var btnL=document.getElementsByClassName("b_left")[0];
+        // 获取图片元素对象
+        var img=document.getElementById("img01")
+
+        // 定义一个下标变量 
+        var index=0;
+        // 绑定单击按钮事件
+        btnR.onclick=function(){
+            // 点击一下，下标累加1
+            index++;
+            // 判断是否超过最大值，是的话就归零
+            if(index==arrImage.length){
+                index=0;
+            }
+            console.log(index);
+            // 调用修改属性方法重置图片对象的来源
+            img.setAttribute("src",arrImage[index]);
+        }
+        // 绑定按钮的单击事件
+        btnL.onclick=function(){
+            index--;
+            if(index<0){
+                index=(arrImage.length)-1;
+            }
+            console.log(index)
+            img.setAttribute("src",arrImage[index]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!-- demo04:JQ中动画的显示 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo04</title>
+    <style>
+        #ball{
+            width: 20px;
+            height: 20px;
+            background-color: gold;
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <!-- <div>
+        <img id="img02" src="img02.png">
+    </div>
+    <button id="button">隐藏</button> -->
+
+    <!-- 定义一个小球元素 -->
+    <!-- 想要让小球移动起来就要先让小球悬浮起来，设置成绝对定位，不然会破坏其他文档 -->
+    <div id="ball">
+
+    </div>
+    <button id="move">Move</button>
+
+
+    <script>
+        // 绑定事件
+        $("#button").on("click",function(){
+            if($("#button").text()=="隐藏"){
+                $("#img02").fadeOut(2000,function(){
+                $("#button").text("显示");
+            })
+            }else{
+                $("#img02").fadeIn(2000,function(){
+                    $("#button").text("隐藏");
+                })
+            }
+
+        })
+        
+        // 先绑定这个按钮的单击事件
+        $("#move").on("click",function(){
+            $("#ball").animate({
+                left:"200px", // 点击按钮后小球距离左边200px了
+            })
+            // 设置延时
+            setTimeout(function(){
+                $("#ball").animate({
+                    top:"10px"
+                })
+            },10)
+            setTimeout(function(){
+                $("#ball").animate({
+                    left:"100px"
+                })
+            },20)
+            setTimeout(function(){
+                $("#ball").animate({
+                    top:"100px"
+                },function(){
+                    $("#ball").fadeOut(2000)
+                })
+            },30)
+        })
+
+        // 原生的页面加载完毕 
+        window.onload=function(){
+            alert("页面加载完毕")
+        }
+
+        // JQ中页面加载完毕，优先级比较高
+        $(function(){
+            alert("页面加载完毕")
+        })
+    </script>
+</body>
+</html>

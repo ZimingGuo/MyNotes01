@@ -1,0 +1,59 @@
+<!-- 练习1：CSS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS练习</title>
+    <!-- 在 head 里面再添加一个 style 元素，用于描述 body 中的内容 -->
+    <!--    <style type="text/css">-->
+    <!--        /* 只要是有id就可以通过#进行查找 */ /*id 定位选择器*/-->
+    <!--        #p1{color: red;background-color: #71BD48}-->
+    <!--        #div1{color: deepskyblue;background-color: #9c9a9c}-->
+    <!--    </style>-->
+
+    <!-- link 就是用于导入外部样式文件 herf 由路径决定-->
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        #div2 {
+            color: red;
+        }
+
+        /* "*"表示制定了所有的元素，不再需要每一个每一个的写了 */
+        /* 这两句话就是把浏览器默认的左边距设置为0 ，且每一句话之间的间距为0，此时p和div没有区别了 */
+        * {
+            margin: 0px;
+            padding: 0px
+        }
+        .blue{
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 如果仅仅是文字元素的话，就直接用<p>就可以 -->
+    <p id="p1"> <!-- 前景色是红色 -->
+        今天是四月二十八日
+    </p>
+    <div id="div1">
+        明天就是四月二十九号啦啦啦啦
+        <div>
+            这是一个子类元素
+        </div>
+    </div>
+    <p id="p2">
+        后天呢，那就是四月三十号啦！！！
+    </p>
+    <div id="div2" style="color: #81CFC9;">
+        this is a text content
+    </div>
+    <br>
+    <br>
+    <!-- 想将这三个元素里包含的文字的前景色变成蓝色 -->
+    <!-- 用 class 选择器来实现(样式类别) -->
+    <!-- 每一个元素里都有一个 class 属性，调用这个样式类别，实现对元素的修改 -->
+    <div class="blue">Jacky & Jason</div>
+    <p class="blue">Johnny & Mike</p>
+    <h3 class="blue">Everyone in this class</h3>    
+
+</body>
+</html>

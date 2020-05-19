@@ -1,0 +1,54 @@
+<!-- demo04:写一个单击按钮的事件，点击按钮变换背景颜色 -->
+<!-- 以后总是这三个步骤：
+        1）添加元素
+        2）写元素的样式 
+        3）微调 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo04</title>
+    <style>
+        /* 先对这两个元素的默认属性清除一下 */
+        fieldset{
+            margin: 0 auto;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 分组元素，介绍一个新的元素，用于分块 -->
+    <fieldset>
+        <!-- 表示分组元素的标题 -->
+        <legend>控制页面的背景色</legend>
+        <div id="btns">
+            <button id="red">RED</button>
+            <button id="blue">BLUE</button>
+            <button id="green">GREEN</button>
+        </div>
+    </fieldset>
+    <!-- 下面就开始学写 JS 代码了 -->
+    <script>
+        // 找到全部按钮元素，并分别保存到变量中
+        var button_Red=document.getElementById("red")
+        var button_Blue=document.getElementById("blue")
+        var button_Green=document.getElementById("green")
+        // 绑定按钮元素的单击事件其实是可以分开写的（不在 button 里面写了）
+            // 由原来的属性绑定，改为现在的分开绑定，好处：页面 & 样式 & JS代码 一块是一块，分开来写
+        // 绑定事件的开头一般都是“on”
+        // 这句话的意思是：button_Red 按钮的单击事件是执行一个代码块，代码块由 function 声明
+        button_Red.onclick=function(){
+            // 使元素的背景色变红(在样式中可以访问的在JS中也可以访问，只不过写法不同了)
+            document.body.style.backgroundColor="red"
+        }
+        // 其他颜色以此类推
+        button_Blue.onclick=function(){
+            document.body.style.backgroundColor="blue"
+        }
+        button_Green.onclick=function(){
+            document.body.style.backgroundColor="green"
+        }
+    </script>
+</body>
+</html>

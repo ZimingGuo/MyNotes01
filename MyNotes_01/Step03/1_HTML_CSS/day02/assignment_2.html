@@ -1,0 +1,97 @@
+<!-- 第三张作业 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业2</title>
+    <style>
+        /* 除掉 h3 和 p 的默认属性 */
+        h3,h5,p{
+            margin: 0; /* 除掉外边距离 */
+            padding: 0; /* 除掉内边距离 */
+       }
+        #goods{
+            width: 300px;
+            border: solid 1px gray;
+            margin: 0 auto;
+            /* 设置好边框之后要设置内边距，padding */
+            padding: 20px 15px;
+        }
+        .image_top,.bottom{
+            width: 100%;
+            border: solid red 0px;
+        }
+        .title_top{
+            border: solid 0px red;
+            text-align: center;
+            padding: 10px 0px 8px 0px;
+            background-color: #eee;
+        }
+        .middle{
+            border: solid 0px red;
+            overflow: hidden; /* 清除浮动 */
+        }
+        .middle>.float_left{
+            /* 浮动到左边 */
+            float: left;
+            width: 145px;
+            text-align: center;
+        }
+        .middle>.float_right{
+            float: right;
+            width: 145px;
+            text-align: center;
+        }
+        img{
+            width: 100%;
+        }
+        a:link{
+            color: #666;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        a{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="goods">
+        <!-- 顶部 div -->
+        <div class="top">
+            <h3>众筹</h3>  <!-- 标题 -->
+            <div class="image_top">
+                <img src="img05.png" alt="">
+            </div>
+            <div class="title_top">
+                <h3>苹果 Apple Watch 手表挺好挺好</h3>
+                <p>我去年在香港买了一个哈哈哈</p>
+            </div>
+        </div>
+        <!-- 中部 div -->
+        <div class="middle">
+            <div class="float_left" >
+                <img src="img03.jpg" alt="">
+                <h5>大圣原版手偶</h5>
+            </div>
+            <div class="float_right">
+                <img src="img04.png" alt="">
+                <h5>智能运动鞋</h5>
+            </div>
+        </div>
+        <!-- 底部 div -->
+        <div>
+            <div class="bottom">
+                <a href="#">智能手表</a>
+                <a href="#">时尚家具</a>
+                <a href="#">欧美风格</a>
+                <br>
+                <a href="#" style="color: gold;">[大大小小]</a>
+                <a href="#">经典版本</a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

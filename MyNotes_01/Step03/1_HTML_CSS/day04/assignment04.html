@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 13px;
+        }
+        h3{
+            margin: 0px;
+            padding: 0px;
+        }
+        #list{
+            overflow: hidden;
+            border: solid 0px red;
+            margin: 0 auto;
+            width: 607px;
+        }
+        #list>.left{
+            border: solid 0px red;
+            float: left;
+            width: 59px;
+        }
+        #list>.right{
+            width: 534px;
+            /* 这个图片的模块其实也是float到左边，因为都是左对齐 */
+            border: solid 0px red;
+            float: left;
+            margin-left: 10px;
+        }
+        #list>.right>h3{
+            margin-top: 8px;
+        }
+        .left>img{
+            border: solid 0px red;
+            width: 68px;
+            margin-top: 5px;
+        }
+        #list>.right>.imgs{
+            width: 250px;
+            float: left;
+            margin-top: 8px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            
+        }
+        #list>.imgs>img{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+        <!-- 1. 根据需需编写页面元素
+         2. 添加页面元素样式
+         3. 微调页面代码，调优 -->
+    <div id="list">
+        <dic class="left">
+            <img src="img01.png" alt="">
+        </dic>
+        <div class="right">
+            <h3>BlueNicinc</h3>
+            <p>
+                判断表达式1是否成立,返回布尔值
+                如果表达式1成立,执行表达式2;
+                如果表达式1不成立,执行表达式3;
+                /* 这个图片的模块其实也是float到左边，因为都是左对齐 */
+                border: solid 1px red;
+                float: left;
+                margin-left: 10px;
+            </p>
+            <div class="imgs">
+                <img src="img05.png" alt="">
+                <img src="img05.png" alt="">
+                <img src="img05.png" alt="">
+                <img src="img05.png" alt="">
+                <img src="img05.png" alt="">
+                <img src="img05.png" alt="">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- demo01:验证界面 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定义错误提示信息样式 */
+        #tip {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- action 表示提交到服务器的路径 -->
+    <!-- 表单验证事件，不在提交按钮上 
+         数据由表单提交，按钮只是为表单服务的，因此验证事件应该在表单上“form” 
+         在 onsubmit 事件中如果返回值为false则不能提交，如果为true则可以提交 -->
+    <!-- 因此可以把返回的真假值封装成函数，通过控制函数来控制是否可以提交 -->
+    <form action="" onsubmit="return sub();">
+        <!-- 表单中元素的 name 是用于获取数据的名称 -->
+        <!-- id 是用于之后写 js/css 定位时候获取元素的 -->
+        <input type="text" name="input01" id="input01">
+
+        <!-- 用于文本框内的数据进行提交 -->
+        <input type="submit" value="提交">
+
+        <!-- 添加一个信息提示元素 -->
+        <div id="tip">内容不能为空！</div>
+    </form>
+    <script>
+        // 编写一个用于事件提交的函数
+        function sub() {
+            // 获取文本框元素对象
+            var input0101 = document.getElementById("input01")
+            var tip01 = document.getElementById("tip")
+            // 判断文本框的内容是否为空 
+            if (input0101.value == "") {
+                // 显示错误提示信息 
+                tip01.style.display = "block";
+                // 文本框元素还要获取焦点 
+                input0101.focus();
+                // 阻止提交
+                return false;
+            }
+            // 不为空正常提交
+            return true;
+        }
+    </script>
+</body>
+
+</html>

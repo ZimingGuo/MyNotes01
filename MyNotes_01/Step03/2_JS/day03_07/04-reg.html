@@ -1,0 +1,45 @@
+<!-- demo04:正则匹配练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo04</title>
+</head>
+<body>
+    <script>
+        var str='efgabcde'
+        // 想查找一下字符串里面是否包含 a 
+        // 先定义一个正则对象(reg对象)
+        var reg=/a/ig; // 反斜杠中间的内容就是要查找的内容
+        // 开始匹配 
+        console.log(reg.test(str)); // 输出结果为显是否有匹配
+
+        // 使用对象来定义正则表达式
+        var reg2=new RegExp("a","ig")
+        console.log(reg2.test(str)) // 返回的是时候存在
+
+        // 查看下一次匹配的索引位置 
+        // 如果调用两次这个方法的话，每一次的查询结果是不一样的，一般来说不会调用两次
+        console.log(reg2.lastIndex);
+        // 只有对于全局进行匹配的时候(g)lastIndex才会起作用
+        reg2.lastIndex=0; // 对索引进行重置，重置其实索引位置
+        // 第二次再查询一下 结果就为 false
+        console.log(reg2.test(str))
+
+        var str="aacbefag";
+        // 想把 a 找出来存储在数组里面
+        var reg03=/a/ig;
+        // 定义一个 arr 变量，用于存储匹配出来的数组
+        var arr=str.match(reg03);
+        console.log(arr.toString()) // 将数组转换成字符串
+
+        // 将找到的 a 替换成 i ，不影响原来字符串
+        // replace 里面现一个写正则表达式，后一个写替换成的内容
+        var str02=str.replace(reg03,"i");
+        // 输出替换后的 str 值
+        console.log(str)
+        console.log(str02)
+    </script>
+</body>
+</html>

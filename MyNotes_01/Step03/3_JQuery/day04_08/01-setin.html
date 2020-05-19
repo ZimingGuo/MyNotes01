@@ -1,0 +1,85 @@
+<!-- demo01:定时器练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo01</title>
+    <style>
+        #box{
+            width: 144px;
+            border:  solid 1px #cccccc;
+            margin:  0 auto;
+            padding: 10px 5px;
+            overflow: hidden;
+        }
+        #box>span{
+            border: solid 0px red;
+            display: inline-block; 
+            width: 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button id="stop">Stop</button> -->
+
+    <!-- 用 div 包裹 span 的好处是：块元素包裹内联元素 -->
+    <!-- <div id="box">
+
+        <span id="hour">00</span>
+        <span style="padding-left: 5px;">:</span>
+        <span id="minute">00</span>
+        <span style="padding-left: 5px;">:</span>
+        <span id="second">00</span>
+
+    </div> -->
+
+    <script>
+        // // 每间隔一秒钟，在控制台输出一个 OK 
+        // var timer01=setInterval(function(){
+        //     console.log("OK");
+        // },1000) // 时间单位是毫秒
+
+        // // 获取按钮元素对象 & 绑定单击事件
+        // var stop_c=document.getElementById("stop")
+        // stop_c.onclick=function(){
+        //     // 点击之后就停止，停止定时器的进程
+        //     clearInterval(timer01); // 括号里写开始的那个计时器的ID
+        // }
+
+        // // 获取系统的时间
+        // var dt=new Date(); // 获取当前系统的时间，并保存在变量 dt 中
+        // document.getElementById("hour").innerText=dt.getHours();
+        // document.getElementById("minute").innerText=dt.getMinutes();
+        // document.getElementById("second").innerText=dt.getSeconds();
+
+        // // 现在只是手动获取了，设置定时器，自动获取 better
+        // // 定义一个定时器，每隔一秒获取一次对象值，并给元素
+        // var timer02=setInterval(function(){
+        //     // 获取系统的时间
+        //     var dt=new Date(); // 获取当前系统的时间，并保存在变量 dt 中
+        //     document.getElementById("hour").innerText=num_changer(dt.getHours());
+        //     document.getElementById("minute").innerText=num_changer(dt.getMinutes());
+        //     document.getElementById("second").innerText=num_changer(dt.getSeconds());
+        // },1000);
+
+        // // 定义一个函数，单个数字的时候显示两位数字，前面加 “0”
+        // function num_changer(n){
+        //     if(n<10)
+        //         return "0"+n
+        //     else
+        //         return n
+        // }
+
+        // 设置延时定时器
+        var timer03=setTimeout(function(){
+            console.log("今天是一个好日子！")
+        },2000);
+        var timer04=setTimeout(function(){
+            console.log("今天是周一！")
+        },4000);
+    </script>
+</body>
+</html>

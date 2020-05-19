@@ -1,0 +1,59 @@
+<!-- 练习1:border -->
+<!-- 用 border 画圆形，三角形，圆形边框，padding 和 margin 都为零 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习1:border</title>
+    <style>
+        #test{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            margin: 0 auto;
+            border: 2px solid blueviolet;
+        }
+        #test02{
+            width: 0px;
+            height: 0px;
+            background-color:white;
+            margin: 0 auto;
+            border: 50px solid bisque;
+            border-bottom-color: transparent; /* 表示的是四个三角形中下面的三角形的颜色 */
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+        #test03{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 0 auto;
+            border: solid 2px transparent;
+            border-radius: 50%;
+        }
+        input{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 这个是用自身的 width 和 height 实现的正方形  -->
+    <div id="test">
+        <!-- 通过内嵌的方式对 div 进行描述 -->
+    </div>
+
+    <!-- 这个使用 border 实现的正方形 -->
+    <!-- 这个就是由四个三角形组成 -->
+    <div id="test02">
+    </div>
+
+    <!-- 圆形边框 -->
+    <div id="test03">
+    </div>
+
+    <input type="text">
+    <input type="submit" value="提交">
+    <input type="button" value="操作">
+</body>
+</html>

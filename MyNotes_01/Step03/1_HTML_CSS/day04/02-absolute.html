@@ -1,0 +1,45 @@
+<!-- demo02:绝对定位 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo02:绝对定位</title>
+    <style>
+        #parent{
+            border: solid 1px red;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            /* 首先把祖先元素设置成相对定位，变成子元素的参照物 */
+            /* 如果不设置父代的参照物，就会以浏览器为参照物 */
+            position: relative; 
+        }
+        #parent>#child{
+            /* 要知道：此时这个矩形的元素是悬浮在父代元素之上的 */
+            border: solid 1px red;
+            width: 299px;
+            height: 28px;
+            background-color: rgba(0, 255, 255, 0.575);
+            position: absolute;
+            bottom: 0px;
+            color: white;
+            text-align: center;
+        }
+        img{
+            /* 子元素可以设置为相对百分比的宽度，相对于父元素 */
+            height: 100px;
+            width: 200px;
+            /* 想改变img元素的大小，可以直接在 img 元素里面修改，就近原则，这样的优先级最高 */
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <img src="img01.png" alt="">
+        <div id="child">
+            this is a image 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!-- 作业2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业2</title>
+    <style>
+        #p01{
+            border: solid 0px red;
+            font-size: 13px;
+            margin-top: 10px;
+            margin-left: 43px;
+            padding: 0px;
+        }
+        #p02{
+            border: solid 0px red;
+            float: right;
+            margin-top: -34px;
+            margin-right: 10px;
+        }
+        #outline{
+            border: solid 0px rgb(236, 236, 236);
+            margin: 0 auto;
+            width: 166px;
+            height: 55px;
+        }
+        #outline #box{
+            border: solid 1px white;
+            width: 141px;
+            height: 36px;
+            margin-left: 12px;
+            margin-top: 25px;
+            background-color: rgb(249, 249, 249);
+        }
+        #circle{
+            border: solid 7px red;
+            width: 0px;
+            height: 0px;
+            border-radius: 50% 50% 50% 0%;
+        }
+        /* 注意：在做这个小的悬浮的标签的时候要用到父相对定位，子绝对定位，用绝对定位来做 */
+        #p03{
+            font-size: 14px;
+            margin: 0px;
+            padding: 0px;
+            margin-top: -17px;
+            margin-left: 4px;
+            color: white;
+        }
+        #outer{
+            float: right;
+            margin-top: -45px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. 根据需需编写页面元素
+         2. 添加页面元素样式
+         3. 微调页面代码，调优 -->
+    <div id="outline">
+        <div id="box">
+            <p id="p01">我的购物车</p>
+            <p id="p02">></p>
+            <div id="outer">
+                <div id="circle"></div>
+                <p id="p03">1</p>
+                <!-- <span>1</span> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

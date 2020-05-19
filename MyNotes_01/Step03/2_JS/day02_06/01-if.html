@@ -1,0 +1,66 @@
+<!-- demo01: if语句的使用 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            width: 200px;
+            border: solid 1px red;
+            margin: 0 auto;
+        }
+        #nav>.title{
+            border-bottom: solid 1px red;
+            padding: 5px 8px;
+            background-color: #eeeeee;
+            /* pointer 将鼠标外形改成手的形状 */
+            /* move 将鼠标形状改成移动状态 */
+            cursor: pointer; 
+        }
+        #nav>.content{
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div id="title" class="title" onclick="todo01()">
+            今天是没有组会的一天
+        </div>
+        <div id="content" class="content">
+            不开会呢，我就可以学习JS啦
+            不开会呢，我就可以学习JS啦
+            不开会呢，我就可以学习JS啦
+            不开会呢，我就可以学习JS啦
+            不开会呢，我就可以学习JS啦
+            不开会呢，我就可以学习JS啦
+            不开会呢，我就可以学习JS啦
+            不开会呢，我就可以学习JS啦
+        </div>
+    </div>
+    <script>
+        // 1. 获取到标题和内容元素对象
+            // 不是只能用id获取元素的，用类名也可以的
+        var a=document.getElementById("title") // 获取标题
+            // getElementByIdName 的时候返回的是一个集合，想要查看元素就要用序号查看“[0]...”
+        var b=document.getElementById("content") // 获取元素内容 
+        // 2. 绑定元素的单击之后的行为
+        // 3. 绑定好 onclick 之后编写代码块 todo01 的内容
+        console.log(b.style.display=="")
+        function todo01() {
+            // 首先要看一下内容元素是显示还是隐藏的状态，然后再执行下一步的操作然后
+            // 如果是真，即有显示，就执行 none ，即隐藏 
+            if(b.style.display==""){
+                b.style.display="none"
+            }else{
+                // 如果是假，即开始就是隐藏，那就执行“”，即显示
+                b.style.display=""
+            }
+            // 先输出一下状态值
+            console.log(status);
+        }
+    </script>
+</body>
+</html>

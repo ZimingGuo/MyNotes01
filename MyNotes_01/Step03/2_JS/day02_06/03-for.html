@@ -1,0 +1,60 @@
+<!-- demo03:for循环语句练习 -->
+<!-- 计算1-100加和 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo03</title>
+    <style>
+        /* 先写一个样式 */
+        #result{
+            width: 100px;
+            margin: 0 auto;
+            border: solid 1px #666666;
+            background-color: antiquewhite;
+            text-align: center;
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+    <div id="result">
+        0000
+    </div>
+    <script>
+        // // 1. 用 while 计算 1-100 
+        // var i=1,sum=0; // 定义一个初始变量
+        // while(i<101){
+        //     // 计算每一次循环变量累加的值，并保存在变量中
+        //     sum+=i;
+        //     i+=1; // 计数器加一
+        // }
+        // // 获取指定 id 名称的对象，保存在变量中（让HTML和JS关联起来）
+        // var result_receiver=document.getElementById("result");
+        // // 将累加的结果作为内容显示在页面元素中
+        // result_receiver.innerText=sum;
+
+        // // 2. 用 do-while 计算 1-100
+        // var i=1,sum=0;
+        // do {
+        //     sum+=i;
+        //     i++;
+        // } while (i<=100);
+        // var result_receiver=document.getElementById("result")
+        // result_receiver.innerText=sum
+
+        // 3. for 语句实现 1-100 加和
+        var i=1,sum=0;
+        for(i;i<=100;i++){
+            // // 加上了 if 就可以计算某一段数字
+            // if(i>50) break;
+            // 计算奇数的值
+            if((i%2)==0) continue
+            sum+=i;
+        }
+        var result_receiver=document.getElementById("result")
+        result_receiver.innerText=sum
+    </script>
+</body>
+</html>

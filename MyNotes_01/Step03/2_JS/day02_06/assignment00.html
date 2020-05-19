@@ -1,0 +1,97 @@
+<!-- 作业01:点击按钮滚动图片 -->
+<!-- 1.添加元素 2.布局 3.微调 4.写逻辑JS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业1</title>
+    <style>
+        #background{
+            width: 739px;
+            height: 419px;
+            border: solid 0px red;
+            margin: 0 auto;
+            position: relative;
+        }
+        #background>#main_img{
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        #background>#control{
+            border: solid 0px red;
+            width: 739px;
+            overflow: hidden;
+            position: absolute;
+            margin-top: -240px;
+            z-index: 2;
+        }
+        #background #control #imgl,#imgr{
+            cursor: pointer;
+        }
+        #background #control #imgl{
+            float: left;
+        }
+        #background #control #imgr{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="background">
+        <img src="gm1.jpg" id="main_img">
+        <div id="control">
+            <img id="imgl" src="l1.png">
+            <img src="r1.png" id="imgr">
+        </div>
+    </div>
+    <script>
+        var Left=document.getElementById("imgl");
+        var Right=document.getElementById("imgr");
+        var MainImage=document.getElementById("main_img")
+        var counter=1;
+
+        Left.onclick=function(){
+            counter--;
+            console.log(counter)
+            switch (counter) {
+            case 1:
+            MainImage.setAttribute("src","gm1.jpg")
+                break;
+            case 2:
+            MainImage.setAttribute("src","gm2.jpg")
+                break;
+            case 3:
+            MainImage.setAttribute("src","gm3.jpg")
+                break;
+            case 4:
+            MainImage.setAttribute("src","gm4.jpg")
+                break;
+            default:
+                break;
+        }
+        }
+        Right.onclick=function(){
+            counter++;
+            console.log(counter)
+            switch (counter) {
+            case 1:
+            MainImage.setAttribute("src","gm1.jpg")
+                break;
+            case 2:
+            MainImage.setAttribute("src","gm2.jpg")
+                break;
+            case 3:
+            MainImage.setAttribute("src","gm3.jpg")
+                break;
+            case 4:
+            MainImage.setAttribute("src","gm4.jpg")
+                break;
+            default:
+                break;
+        }
+        }
+    </script>
+</body>
+</html>

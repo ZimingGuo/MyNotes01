@@ -1,0 +1,54 @@
+<!-- demo01:函数及匿名函数的练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo01</title>
+</head>
+<body>
+    <div id="tip">...</div>
+    <script>
+        // // 定义一个带有名称参数的函数
+        // function Hi(name,age){
+        //     return name+",Hello! 他的 age 是"+age
+        // }
+        // // 获取指定 id 号的元素，并保存在变量当中
+        // var objTip=document.getElementById("tip")
+        // // 设置元素对象中的内容
+        // objTip.innerText=Hi('Jaosn',18)
+
+        // 扩展：JSON格式对象函数
+        // 目前主流的函数的写法是封装起来写的：
+        // 调用的方法就是 “点” 一下：log.ab() / log.cd()
+        // 这种方式放在匿名函数里是有问题的
+        // var log={
+        //     ab:function(){
+        //         return "ok"
+        //     },
+        //     cd:function() {
+        //         return "no"
+        //     }
+        // }
+
+        // // 用带参数的匿名函数来完成 (把整个函数括起来)
+        // (function(name,age){
+        //     var toshow=name+",Hello! 他的 age 是"+age // 新建一个变量,用于储存内容
+        //     var objTip=document.getElementById("tip") // 然后新建一个用于接收的对象 
+        //     objTip.innerText=toshow // 紧接着把上一个变量的内容赋给下面这个新建的对象 的 innerText 
+        //     // 其实就可以把整个页面都看成是一个大的匿名函数，封装好
+        //     // 匿名函数也可以在里面调用一个新的函数
+        // })("Jacky",22) // 传递参数
+
+        var c=300;
+        function aa(){
+            // 在函数体内用 var 定义的变量就是局部变量
+            // 如果想在里面定义变量，而且还想是一个全局变量，那就不要加 var，直接定义成全局的
+            var c=100;
+            console.log(c);
+        }
+        aa()
+        console.log(c) // 这个c是局部变量，在函数外部是不能够访问的
+    </script>
+</body>
+</html>

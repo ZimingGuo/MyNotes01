@@ -1,0 +1,42 @@
+<!-- 练习2:群组选择器，group -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group</title>
+    <style>
+        div,p,h3{
+            color: coral;
+        }
+        /* 这种分组的方式特别适合做多类元素默认样式的设置 */
+        p,h4,figure,ul,ol{
+            margin: 0px;
+            padding: 0px;
+        }
+        /* 用一个空格来体现父子类的关系 */
+        div p{
+            color: gold;
+        }
+        div p span{
+            color: violet;
+        }
+    </style>
+</head>
+<body>
+    <!-- 群组选择器：为一组元素统一设置样式 -->
+    <div>这是用VSCode写的第一个文档</div>
+    <p>这是第二条语句</p>
+    <h3>This is the third sentence</h3>
+    
+    <!-- 后代选择器 -->
+    <!-- 想设置 div 元素下的 p 元素的字体颜色 -->
+    <div>
+        <p>我是一个子类元素
+            <br>
+            <span>我是 p 元素的子元素</span>
+        </p>
+    </div>
+    
+</body>
+</html>

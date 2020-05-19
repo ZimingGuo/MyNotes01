@@ -1,0 +1,55 @@
+<!-- 练习01:做一个搜索就变色的页面效果 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习01</title>
+    <style>
+        #search_out{
+            width: 260px;
+            margin: 0 auto;
+        }
+        p>span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="search_out">
+        <input type="text" id="keyword">
+        <button id="search_btn">查询</button>
+        <p id="p01">
+            这是一段用于测试练习01的一段文字，我也不知道为什么来时总是写一些没有意义的文字。
+            他说天天都是好天气，也不知道到底是不是。
+        </p>
+    </div>
+    <!-- 先绑定按钮的单击时间 -->
+    <!-- 然后获取文本框中输入的值 -->
+    <!-- 查找一下文本里是否有这个值，有的话就做替换 -->
+    <script>
+        // 因为预测到获取的对象会比较多，所以就封装成一个函数，以后调用很方便
+        function $$(id){
+            return document.getElementById(id)
+        }
+
+        // 获取查询按钮，并保存在单击事件中(这个变量就保存了页面的按钮对象)
+        var searchBtn=$$("search_btn");
+        // 获取文本框对象，并保存在变量中
+        var keyWord=$$("keyword");
+        // 获取内容对象，保存在变量中
+        var p=$$("p01");
+
+        searchBtn.onclick=function(){
+            // 定义一个正则对象
+            var reg01=new RegExp(keyWord.value,"ig"); // 这种定义方式的好处是可以传变量进去
+            // 这样的话即使传递的是个变量，也可以通过单引号转换成字符
+            // 获取内容
+            var newStr=p.innerHTML.replace(reg01,"<span>"+keyWord.value+"</span>");
+            console.log(newStr);
+            // 更新新的字符内容，直接在给到原来的变量，因为 replace 不改变原来字符内容
+            p.innerHTML=newStr;
+        }
+    </script>
+</body>
+</html>

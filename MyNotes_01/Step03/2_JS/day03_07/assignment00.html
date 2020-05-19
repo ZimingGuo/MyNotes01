@@ -1,0 +1,81 @@
+<!-- 作业1: -->
+<!-- 大中小调整字体 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业1</title>
+    <style>
+        p{
+            margin: 0px;
+            padding: 0px;
+        }
+        #outline{
+            border: solid 1px grey;
+            margin: 0 auto;
+            width: 300px;
+        }
+        #outline #char{
+            border: solid 0px red;
+            width: 300px;
+        }
+        #charL{
+            border: solid 0px red;
+            width: 300px;
+            font-size: 25px;
+        }
+        #charS{
+            border: solid 0px red;
+            width: 300px;
+            font-size: 9px;
+        }
+        #outline #controller{
+            border-bottom: solid 1px grey;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        #c01,#c02,#c03{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="outline">
+        <div id="controller">
+            <span id="c01">大</span>
+            <span id="c02">中</span>
+            <span id="c03">小</span>
+        </div>
+        <p id="char">
+            超文本语言：里面含有大量的尖括号，专门用于浏览器识别和解析的，用于保存内容，设置图片，设置超链接的标志。实际上是一种标志。
+        </p>
+    </div>
+    <script>
+        // 获取 controller 和文字内容
+        var c_01=document.getElementById("c01");
+        var c_02=document.getElementById("c02");
+        var c_03=document.getElementById("c03");
+        var char_01=document.getElementById("char");
+
+        // 绑定事件
+        c_01.onclick=function(){
+            var L=char_01.innerHTML.replace(char_01.innerHTML,'<p id="charL">'+char_01.innerText+'</p>');
+            // 终于调出来了，思路：用 HTML 格式替换 HTML 格式。新的内容是CSS样式直接包裹原内容（innerText）而不是原来的样式+内容（innerHTML）
+            console.log(L);
+            // 记得：更新后的内容一定要记得赋给原来的变量
+            char_01.innerHTML=L;
+        }
+        c_02.onclick=function(){
+            var M=char_01.innerHTML.replace(char_01.innerHTML,'<p id="char">'+char_01.innerText+'</p>');
+            console.log(M);
+            char_01.innerHTML=M;
+        }
+        c_03.onclick=function(){
+            var S=char_01.innerHTML.replace(char_01.innerHTML,'<p id="charS">'+char_01.innerText+'</p>');
+            console.log(S);
+            char_01.innerHTML=S;
+        }
+    </script>
+</body>
+</html>

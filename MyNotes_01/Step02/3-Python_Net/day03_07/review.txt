@@ -1,0 +1,31 @@
+Review
+
+1.tcp通信
+
+2. udp通信
+
+   服务端： socket -> bind -> recvfrom/sendto -> close
+
+   客户端： socket -> sendto/recvfrom -> close
+
+3. 套接字属性
+
+    fileno()
+    getpeername()
+    setsockopt()
+
+4. 广播 一端发送多端接收
+
+5. http 协议
+
+   格式：请求格式 & 响应格式
+
+   请求格式：  请求行  GET  /   HTTP/1.1
+             请求头(键值对)
+             空行
+             请求体
+
+   响应格式：  响应行  HTTP/1.1  200  OK
+             响应头
+             空行
+             响应体  具体内容

@@ -1,0 +1,130 @@
+<!-- demo01:选项卡 -->
+<!-- 隐藏 & 显示的方法：block & none -->
+<!-- 添加页面元素；写样式；微调 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo02</title>
+    <style>
+        #tabs{
+            border: solid 1px #cccccc;
+            width: 416px;
+            height: 218px;
+        }
+        /* 用这个 nav 包裹浮动元素 */
+        #tabs .nav{
+            overflow: hidden;
+        }
+        /* span 是内联元素，可以转成块元素，
+         转换之后就可以加宽度了 */
+        #tabs .nav div{
+            border: solid 0px red;
+            float: left;
+            width: 104px;
+            text-align: center;
+            padding: 5px 0px;
+            cursor: pointer;
+        }
+        /* 创建一个隐藏的类，凡是调用这个 hid 类的就会隐藏 */
+        .hid{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+        /* 写一个焦点样式，就是被选中的部分的样式，这种方法很有效 */
+        .focus{
+            background-color: #0392cc;
+            color: white;
+        }
+        /* 写一个背景样式 */
+        .bg{
+            background-color: #c5c5c5;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabs">
+        <div class="nav"> <!-- 写导航条 -->
+            <!-- 用 span 元素做导航条最合适，因为是内联元素 -->
+            <div class="bg" id="div01">热点新闻</div>
+            <div class="bg" id="div02">合作播报</div>
+            <div class="bg" id="div03">行业咨询</div>
+            <div class="focus" id="div04">运营攻略</div>
+        </div>
+        <div class="con"> <!-- 写样式 -->
+            <!-- 四个 div 对应四个导航内容 -->
+            <div class="hid" id="div01_1">111</div>
+            <div class="hid" id="div02_1">222</div>
+            <div class="hid" id="div03_1">333</div>
+            <div id="div04_1">444</div>
+        </div>
+    </div>
+    <script>
+        // 写函数用于获取元素对象
+        function $$(id){
+            return document.getElementById(id);
+        }
+        // 点击 div01 之后发生的事件应该是：把div01设置成焦点状态，把其他的内容设置成平常状态
+        // 即 通过改变类的名称来改变元素状态
+        $$("div01").onclick=function(){
+            // 点击的变成 focus 没点击的变成 bg
+            $$("div01").className="focus";
+            $$("div02").className="bg";
+            $$("div03").className="bg";
+            $$("div04").className="bg";
+
+            // 内容元素显示
+            $$("div01_1").className="show"
+            $$("div02_1").className="hid"
+            $$("div03_1").className="hid"
+            $$("div04_1").className="hid"
+        }
+        $$("div02").onclick=function(){
+            // 点击的变成 focus 没点击的变成 bg
+            $$("div02").className="focus";
+            $$("div01").className="bg"
+            $$("div03").className="bg"
+            $$("div04").className="bg"
+
+            // 内容元素显示
+            $$("div02_1").className="show"
+            $$("div01_1").className="hid"
+            $$("div03_1").className="hid"
+            $$("div04_1").className="hid"
+            
+        }
+        $$("div03").onclick=function(){
+            // 点击的变成 focus 没点击的变成 bg
+            $$("div03").className="focus";
+            $$("div01").className="bg"
+            $$("div02").className="bg"
+            $$("div04").className="bg"
+
+            // 内容元素显示
+            $$("div03_1").className="show"
+            $$("div01_1").className="hid"
+            $$("div02_1").className="hid"
+            $$("div04_1").className="hid"
+        }
+        $$("div04").onclick=function(){
+            // 点击的变成 focus 没点击的变成 bg
+            $$("div04").className="focus";
+            $$("div01").className="bg"
+            $$("div02").className="bg"
+            $$("div03").className="bg"
+
+            // 内容元素显示
+            $$("div04_1").className="show"
+            $$("div01_1").className="hid"
+            $$("div02_1").className="hid"
+            $$("div03_1").className="hid"
+        }
+    </script>
+</body>
+</html>
+
+<!-- main thoughts：
+        把各类样式写在 style 的类里面，在调用函数改变样式的时候，直接通过改变 class 即可改变样式 -->

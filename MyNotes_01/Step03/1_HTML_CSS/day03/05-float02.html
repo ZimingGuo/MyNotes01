@@ -1,0 +1,43 @@
+<!-- demo05:浮动练习2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo05:float</title>
+    <style>
+        .news{
+            width: 308px;
+            border: solid 2px red;
+            overflow: hidden; /* 加上这句话之后就可以包裹浮动的元素了 */
+            margin-bottom: 8px;
+        }
+        .float_left{
+            float: left;
+        }
+        .float_right{
+            float: right;
+        }
+        p{
+            width: 154px;
+            padding: 0; /* 写0的时候就不要带单位了 */
+            margin: 0;
+            margin-left: 8px;
+            margin-top: 8px;
+        }
+        img{
+            width: 146px;
+        }
+    </style>
+</head>
+<body>
+    <div class="news">
+        <img class="float_left" src="img02.png" alt="">
+        <p class="float_right">&nbsp;&nbsp;&nbsp;&nbsp;"文字环绕"：浮动元素遮挡正常元素的位置，无法遮挡正常内容的显示，内容围绕在浮动元素周围显示</p>
+    </div>
+
+    <div class="news">
+        <img class="float_right" src="img02.png" alt="">
+        <p class="float_left">&nbsp;&nbsp;&nbsp;&nbsp;"文字环绕"：浮动元素遮挡正常元素的位置，无法遮挡正常内容的显示，内容围绕在浮动元素周围显示</p>
+    </div>
+</html>

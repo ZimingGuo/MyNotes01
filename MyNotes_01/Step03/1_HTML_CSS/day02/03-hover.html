@@ -1,0 +1,43 @@
+<!-- 练习3:伪类选择器 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover</title>
+    <style>
+        .box{
+            width: 260px;
+            background-color: cornflowerblue;
+            color: aquamarine;
+            text-align: center;
+        }
+        .box:hover{
+            background-color:orange;
+        }
+        #name{margin-top: 8px;}
+        #name:focus{
+            background-color: rgba(128, 255, 0, 0.418);
+        }
+        a:link{color: greenyellow;}
+        a:visited{color: green;}
+        a:hover{background-color: rgb(101, 240, 240);}
+        a:active{background-color: blue;}
+    </style>
+</head>
+<body>
+     <!-- 需求：
+            又一个 div 元素，默认一个背景色，当鼠标移动上去之后变换颜色 -->
+    <div class="box">
+        我会变换背景颜色
+    </div>
+    <form action="#">
+        <label for="">姓&nbsp;&nbsp;&nbsp;名：
+            <input type="text" id="name" name="name">
+        </label>
+    </form>
+
+    <a href="https:www.4399.com">Game</a>
+    
+</body>
+</html>

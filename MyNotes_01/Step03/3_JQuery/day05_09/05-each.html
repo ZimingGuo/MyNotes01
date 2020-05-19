@@ -1,0 +1,30 @@
+<!-- demo05:有关 JQ 中遍历元素的练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo05</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div>111</div>
+    <div>222</div>
+    <div>333</div>
+
+    <!-- 现在要获取每一个 div 里面的内容 -->
+    <script>
+        // 想获取/遍历列表就要用 each 函数来完成
+        // 写法：选择器.each(function(index,element){ })
+        // index 表示索引号
+        // element 表示原生元素
+        $("div").each(function(index,element){
+            console.log(index)
+            // 转换成 JQ 对象
+            console.log($(element))
+            // 通过 each 可以很好的遍历出对象
+            console.log($(element).text()) // text()括号内不带参数就是获取元素内容
+        })
+    </script>
+</body>
+</html>

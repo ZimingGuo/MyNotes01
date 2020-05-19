@@ -1,0 +1,39 @@
+<!-- demo04:浮动练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo04</title>
+    <style>
+        #parent{
+            width: 408px;
+            /* height: 102px; */
+            border: solid 1px red;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #parent .child{ /* 父代是id子代是class，所以一个是# 一个是. */
+            width: 100px;
+            height: 100px;
+            border: dashed 1px gray;
+            float: left;
+        }
+    /* 经过计算，这些尺寸严丝合缝，可以体现盒模型的优点 */
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <!-- 在这下面增加一个元素，清除浮动 -->
+        <!-- <div style="clear: left;"></div> 此种方法的缺点就是多了一个元素> -->
+    </div>
+
+    <div>
+        今天的天气很好
+    </div>
+</body>
+</html>

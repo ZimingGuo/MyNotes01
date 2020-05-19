@@ -1,0 +1,29 @@
+<!-- demo06:日期对象练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo06</title>
+</head>
+<body>
+    <script>
+        // 定义一个日期对象，获取当前时间
+        var date01=new Date(); // 参数为空表示当前日期
+        console.log(date01.getFullYear()); // 方法要加括号 
+        console.log(date01.getMonth()+1); 
+        console.log(date01.getDate());
+        console.log(date01.getDay());
+        console.log(date01.getHours());
+        console.log(date01.getMinutes());
+        console.log(date01.getSeconds());
+        console.log(date01.getTime());
+
+        // 国庆节日
+        var date_n=new Date("2020/10/1 00:00:00");
+        var sub=date_n-date01; // 两个时间相减
+        console.log(sub/1000/3600/24);
+
+    </script>
+</body>
+</html>

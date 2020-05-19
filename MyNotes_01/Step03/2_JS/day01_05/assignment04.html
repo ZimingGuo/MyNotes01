@@ -1,0 +1,33 @@
+<!-- 作业4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业4</title>
+    <style>
+        #mobile{
+            width: 352px;
+            height: 626px;
+            margin: 0 auto;
+            border: solid 0px red;
+            background-image: url("img06.png"); /* 有了背景图片 */
+        }
+        #mobile>iframe{
+            margin-top: 74px;
+            margin-left: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mobile">
+        <!-- <img src="img05.png"> -->
+        <!-- 扩展知识：在页面中打开一个指定地址的页面 -->
+        <!-- 应用场景：在一个页面中，嵌入另一个网址的页面，可以使用 iframe，图片有可能随时变化 -->
+        <!-- 缺点：启动时消耗比较大，但也是一种方式 -->
+        <iframe src="https://www.baidu.com" frameborder="1"
+        width="322px" height="482px" scrolling="no"></iframe>
+        <!-- scrolling="no" 的意思是去除滚动 -->
+    </div>
+</body>
+</html>

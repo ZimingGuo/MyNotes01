@@ -1,0 +1,93 @@
+<!-- 作业2 -->
+<!-- 个人主页 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业2</title>
+    <style>
+        p{
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+        #div01{
+            background-color: azure;
+            height: 405px;
+            width: 522px;
+            margin: 0 auto;
+        }
+        #div02{
+            width: 0px;
+            height: 0px;
+            border: solid white 70px;
+            border-radius: 50%;
+            position: relative;
+        }
+        img{
+            position: absolute;
+            left: 243px;
+            top: 85px;
+        }
+        #div_top{
+            border: solid 0px red;
+            margin-left: 191px;
+            padding-top: 55px;
+        }
+        #p01{
+            border: solid 0px red;
+            margin: 5px;
+            width: 130px;
+        }
+        #div_middle{
+            border: solid 0px red;
+        }
+        .p_middle{
+            margin: 5px;
+        }
+        #div_bottom{
+            border: solid 0px red;
+            margin-top: 10px;
+        }
+        .btn{
+            width: 140px;
+            height: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div id="div_top">
+            <div id="div02">
+            </div>
+            <img src="img01.png" alt="">
+            <p id="p01">budinger</p>
+        </div>
+
+        <div id="div_middle">
+            <p style="font-size: 16px;">Web前端工程师</p>
+            <p class="p_middle" style="font-size: 13px;">男，北京市</p>
+            <p style="font-size: 13px;">这位同学很懒，什么都没有留下</p>
+        </div>
+
+        <div id="div_bottom">
+            <input class="btn" 
+            type="button" 
+            value="访问主页" 
+            style="background-color: blue; color: white; margin-right: 14px; margin-left: 37px;">
+           
+            <input class="btn" 
+            type="button" 
+            value="发消息"
+            style="background-color: green; color: white; margin-right: 14px;">
+            
+            <input class="btn" 
+            type="button" 
+            value="删除好友"
+            style="background-color: red; color: white;">
+        </div>
+    </div>
+</body>
+</html>

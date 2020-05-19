@@ -1,0 +1,20 @@
+复习：
+1）读写缓冲区 flush()
+
+2）文件偏移量 tell()  seek()
+
+3）文件处理函数 os
+
+4）网络基本概念理论
+    * tcp/ip模型
+    * 三次握手 四次挥手（udp是没有的）
+    * tcp udp 的理解
+
+    概念：IP   域名   端口
+
+5）套接字编程： 流式  数据报
+
+6）tcp服务端
+    socket --> bind --> listen --> accept --> recv/send --> close
+    阻塞函数：当程序的条件没有达成的时候就暂停
+

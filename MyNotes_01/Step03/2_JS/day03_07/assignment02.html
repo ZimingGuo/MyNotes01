@@ -1,0 +1,86 @@
+<!-- 作业3:根据按钮显示眼睛鼻子嘴 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业3</title>
+    <style>
+        p{
+            margin: 0px;
+            padding: 0px;
+        }
+        #outline{
+            border: solid 1px red;
+            margin: 0 auto;
+            width: 262px;
+        }
+        #top{
+            border: solid 1px red;
+            width: 85px;
+            margin-left: 88px;
+        }
+        #p01{
+            float: right;
+        }
+        #mid{
+            border: solid 1px red;
+            /* text-align: center; */
+            height: 294px;
+        }
+        #ig01{
+            display: none;
+            margin-left: 55px;
+            margin-top: 27px;
+        }
+        #ig02{
+            display: none;
+            margin-left: 32px;
+            margin-top: 5px;
+        }
+        #ig03{
+            display: block;
+            margin-left: 55px;
+            margin-top: 40px;
+        }
+        #bot{
+            border: solid 1px red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="outline">
+        <div id="top">
+            <input id="cb01" type="checkbox">
+            <p id="p01">开启功能</p>
+        </div>
+        <div id="mid">
+            <img id="ig01" src="img03.png">
+            <img id="ig02" src="img02.png">
+            <img id="ig03" src="img01.png">
+        </div>
+        <div id="bot">
+            <input id="rd01" type="radio">鼻子
+            <input id="rd02" type="radio">眼睛
+            <input id="rd03" type="radio">耳朵
+        </div>
+    </div>
+    <script>
+        // 获取复选框 & checkbox
+        // 首先定义函数，用来获取元素
+        function $$(id){
+            return document.getElementById(id)
+        }
+        var checkbox01=$$("cb01")
+        var radio01=$$("rd01")
+        var radio01=$$("rd02")
+        var radio01=$$("rd03")
+
+        // 获取三张图片
+        var img01=$$("ig01")
+        var img01=$$("ig02")
+        var img01=$$("ig03")
+    </script>
+</body>
+</html>

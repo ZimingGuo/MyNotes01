@@ -1,0 +1,106 @@
+<!-- 作业5:自行设计一个弹框 -->
+<!-- 1. 添加元素 2. 使用样式 3. 微调 4. 写JS逻辑 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业5</title>
+    <style>
+        body{
+            font-size: 13px;
+        }
+        #grey_land{
+            /* 因为覆盖在按钮的上面，所以按钮此时是不能点击的 */
+            position: absolute; /* 以浏览器为参照物绝对定位 */
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.411);
+            width: 100%;
+            height: 100%;
+            display: none; /* 开始的时候这个背景色是隐藏的，none 对应的是 block 唤醒 */
+        }
+        #box{
+            border: solid 0px #cccccc;
+            width: 260px;
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            margin-left: -130px;
+            top: 50%;
+            margin-top: -75px;
+            display: none;
+            border-radius: 3px;
+        }
+        #box .title{
+            background-color: #008081;
+            color: white;
+            padding: 10px 20px;
+        }
+        #box .content{
+            overflow: hidden; /* 子元素想要浮动的时候父元素的 overflow 要设置成 hidden */
+            border: solid 0px red;
+            background-color: white;
+        }
+        /* content 里面的两个元素都是要左浮动的 */
+        #box .content .pic{
+            float: left;
+            margin: 15px 15px;
+        }
+        #box .content .right{
+            float: left;
+            margin-bottom: 30px;
+            margin-top: 15px;
+            margin-left: 18px;
+        }
+        #box .content .right p{
+            margin-left: 7px;
+        }
+        #box .content .right .btn{
+            text-align: center;
+        }
+        #box .content .right .btn button{
+            background-color: #008081;
+            width: 62px;
+            border: none;
+            color: white;
+            padding: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn_pop">Pop</button>
+    <!-- 这个灰色的背景应该是100%占有空间，悬浮在整个页面之上的，因此要用坐标定位 -->
+    <div id="grey_land"></div>
+    <!-- 定义一个弹框 -->
+    <div id="box">
+        <div class="title">提示</div>
+        <div class="content">
+            <div class="pic">
+                <img src="img03.png">
+            </div>
+            <div class="right">
+                <p>你真的要退出吗？</p>
+                <div class="btn">
+                    <button id="close">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 写一下按钮 & 背景的绑定事件
+        var Btn_Pop=document.getElementById("btn_pop");
+        var BG=document.getElementById("grey_land");
+        var Box=document.getElementById("box");
+        var Close=document.getElementById("close")
+        Btn_Pop.onclick=function(){
+            BG.style.display="block" // display 等于空的时候就是显示背景色
+            Box.style.display="block" // 让提示框也显示出来
+        }
+        Close.onclick=function(){
+            BG.style.display="none" 
+            Box.style.display="none"
+        }
+    </script>
+</body>
+</html>

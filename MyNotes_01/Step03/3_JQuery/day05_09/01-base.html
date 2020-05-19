@@ -1,0 +1,54 @@
+<!-- demo01:JQ框架introduction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo01</title>
+    <!-- 导入JQ框架 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 完成了 1.8.3 版本的导入 -->
+    <!-- 解析流程：
+            1. 寻找目标文件
+            2. 下载文件，从文件夹下载到缓存空间
+            3. 对下载文件进行解析，识别 -->
+    <!-- 所以：最好把所有要导入的内容都先导入进来，然后再执行 -->
+    <!-- 尽量少使用导入文件，慢慢慢 -->
+</head>
+<body>
+    <div id="tip">Hello World!</div>
+    <!-- 所有的 JS 代码的编写都是要写在 script 标签里面 -->
+
+    <!-- 添加一个复选框 -->
+    <input type="checkbox" name="marry" id="marry">是否结婚
+    <script>
+        // 输出 JQ 对象
+        console.log($("#tip")); // 这就是一个 JQ 对象
+
+        // 输出 document 对象
+        console.log(document.getElementById("tip"))
+        // 这就可以提现两种对象的区别
+
+        // 转成 JQ 对象
+        console.log($(document.getElementById("tip")));
+
+        // JQ 转原生
+        console.log($("#tip")[0]);
+
+
+        // 改变#tip里的内容 
+        // 原生：
+        // document.getElementById("#tip").innerText="今天刚刚开完组会"
+        // 1.使用JQ选择器获取元素 2.改变元素显示的内容
+        $("#tip").html("<b>今天刚刚开完组会</b>")
+        
+        // 一个值查看，两个值更改
+        console.log($("#tip").attr("id"));
+
+        // 看复选框是否选中
+        // 获取 JQ 对象
+        console.log($("#marry").attr("checked")); // 查看id为marry的元素的checked属性为什么状态
+        console.log($("#marry").prop("checked"));
+    </script>
+</body>
+</html>

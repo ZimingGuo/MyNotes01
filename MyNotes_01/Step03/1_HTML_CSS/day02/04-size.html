@@ -1,0 +1,36 @@
+<!-- 练习4:设置尺寸 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head 里面的内容，不会在页面上有太多展示，只是影响到这个页面 -->
+    <meta charset="UTF-8">
+    <!-- 想要在移动端进行开发，一定要加上一个 meta 元素，下面这句话 -->
+    <!-- 这句话就是提出了一个适配的方案，可以适配到移动端 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size</title>
+    <style>
+        #div01{
+            width: 100px;
+            background-color: orange;
+            height: 50px;
+        }
+        #div02{
+            width: 20em;
+            background-color: blanchedalmond;
+            height: 20px;
+        }
+        #div01>div{
+            width: 20%;
+            height: 20%;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div></div>
+    </div>
+    <div id="div02">
+    </div>
+</body>
+</html>

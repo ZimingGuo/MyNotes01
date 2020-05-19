@@ -1,0 +1,83 @@
+<!-- 练习3 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3</title>
+    <style>
+        body{font-size: 12px}
+        table{width: 990px;border-bottom: solid 1px #ccc}
+        /* <th>xxx</th> 是用来设置表格的表头的*/
+        /* 在设置单元格边框的时候要注意：单元格只负责自己的下边框，上边框是上面一个单元格的下边框 */
+        th{border-bottom: solid 1px #ccc;color: #666}
+        /*调整表格中每一格内的字的属性，但是是统一进行修改*/
+        table tr td{border-bottom: dashed 1px #eee;color: #9c9a9c}
+        a{text-decoration: none}
+        a:link{color: #00a3f5}
+    </style>
+</head>
+<body>
+<table width="990px">
+
+    <tr>
+        <th width="610px" height="50" style="text-align: left;height: 40px">
+            主题
+        </th>
+        <th width="70px" style="text-align: center">
+            <h6>回复/浏览</h6>
+        </th>
+        <th width="100px" style="text-align: center">
+            <h6>作者</h6>
+        </th>
+        <th style="text-align: center">
+            <h6>时间</h6>
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            <a href="#">银灰色的，很酷</a>
+        </td>
+        <td style="text-align: center">0/0</td>
+        <td style="text-align: center">
+            <a href="#">2001年冬天</a>
+        </td>
+        <td style="text-align: center">2014-11-19 13:54:40</td>
+    </tr>
+
+    <tr>
+        <td>
+            <a href="#">性价比超高，活动给力</a>
+        </td>
+        <td style="text-align: center">0/0</td>
+        <td style="text-align: center">
+            <a href="#">xpx2001</a>
+        </td>
+        <td style="text-align: center">2014-11-18 10:21:29</td>
+    </tr>
+
+    <tr>
+        <td>
+            <a href="#">外形精致，值得购买</a>
+        </td>
+        <td style="text-align: center">0/0</td>
+        <td style="text-align: center">
+            <a href="#">xpx2001</a>
+        </td>
+        <td style="text-align: center">2014-11-18 15:27:58</td>
+    </tr>
+
+    <tr>
+        <td>
+            <a href="#">支持，不错</a>
+        </td>
+        <td style="text-align: center">0/0</td>
+        <td style="text-align: center">
+            <a href="#">2001年冬天</a>
+        </td>
+        <td style="text-align: center">2014-11-19 10:22:27</td>
+    </tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- 练习4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习4</title>
+</head>
+<body>
+<h2>用户注册</h2>
+<form action="#">
+    <div>
+        <label for="name">用户名:</label>
+        <input type="text" id="name" name="name" placeholder="请输入用户名">
+    </div>
+
+    <div>
+        <label for="password">密&nbsp;&nbsp;&nbsp;码:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password">
+    </div>
+
+    <div>
+        <label for="merry">婚&nbsp;&nbsp;&nbsp;否:</label>
+        <input type="checkbox" id="merry" name="merry">
+    </div>
+
+    <div>
+        <label for="gender01">性&nbsp;&nbsp;&nbsp;别:</label>
+        <input type="radio" id="gender01" name="gender">男
+        <input type="radio" id="gender02" name="gender">女
+    </div>
+
+    <div>
+        <label for="degree">学&nbsp;&nbsp;&nbsp;历:</label>
+        <!-- 单选的下拉菜单不再用 input 实现了，而是用 select 实现 -->
+        <select name="学历" id="degree">学&nbsp;&nbsp;&nbsp;历:
+            <option value="0">本科</option>
+            <option value="1">硕士</option>
+            <option value="2">博士</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="intro">简&nbsp;&nbsp;&nbsp;介:</label>
+        <textarea name="intro" id="intro" cols="30" rows="10"></textarea>
+    </div>
+
+    <div>
+        <input type="submit" value="提交">
+        <input type="reset" value="Reset">
+    </div>
+</form>
+</body>
+</html>

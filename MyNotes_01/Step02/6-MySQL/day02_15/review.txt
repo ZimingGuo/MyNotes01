@@ -1,0 +1,55 @@
+Review
+
+1. 数据库
+
+
+2. mysql 关系型 开源 c/c++ 安装
+
+
+3. SQL 语句
+    * 数据库操作
+        show databases; 查看所有数据库
+        create database [db_name]; 创建数据库
+        select database(); 查看当前所在数据库
+        show create database [db_name]; 查看创建数据库的语句
+        use [db]; 对哪一个数据库进行操作
+        drop database [db]; 删除数据库
+
+    * 数据表
+        show tables; 查看数据表
+        create table [tb_name] (column1 type)
+            + 对于字段的描述
+                primary key
+                unsigned
+                not null
+                default
+                auto_increment
+            + 数据类型
+                数字（整数，小数，bool）
+                字符串（char，varchar，blob，test，enum，set）
+                时间
+                日期
+        desc [tb];
+        show create table [tb];
+        drop table [tb];
+
+    * 增删改查
+        insert into [tb_name] (column) values (val..)
+        delete from [tb] where ...
+        update [tb] set ... where ...
+        select [column] from table where ...只有 select 是读操作
+
+        where子句是用来筛选条件的：算数   逻辑   比较   位运算
+
+        表结构修改语句
+        alter table [tb] add
+                         drop
+                         modify
+                         change
+                         rename
+
+订单数据库：
+    订单号：商品 时间 金额
+    商家：ID 商品
+    用户信息：ID 用户名 密码 手机号 收获地址 备注 等级
+

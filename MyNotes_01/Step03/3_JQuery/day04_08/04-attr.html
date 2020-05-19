@@ -1,0 +1,46 @@
+<!-- demo04:对元素的属性进行操作 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo04</title>
+    <style>
+        /* .focus{
+            color: white;
+            background-color: red;
+        } */
+        span:hover{
+            color: white;
+            background-color: red;
+        }
+        .red{
+            color: red;
+        }
+        .fs{
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="focus">首页</span>
+        <span class="focus">新闻</span>
+        <span class="focus">图片</span>
+        <span class="focus">热点</span>
+    </div>
+
+    <div id="tip">haha</div> <!-- 这就是一个节点对象 -->
+
+    <script>
+        // 先找到所有的 span 元素集
+        var spans=document.getElementsByTagName("span");
+        spans[0].setAttribute("title","这是一个首页");
+        spans[1].setAttribute("title",spans[0].getAttribute("title")); // 把第一个属性内容拿过来给了第二个
+
+        // 获取元素对象 & 给对象添加类别样式
+        // 可以添加多个类别样式，如下，多个用空格隔开
+        document.getElementById("tip").className="red fs"; // 这句话就是用点的方法设置了 class
+    </script>
+</body>
+</html>

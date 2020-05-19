@@ -1,0 +1,91 @@
+<!-- 作业1改： -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业1</title>
+    <style>
+        #fs{
+            width: 260px;
+            border: solid 1px #cccccc;
+            padding: 10px;
+        }
+        /* 建立一个选中之后的样式 */
+        .focus{
+            color: black;
+            text-decoration: none; /* 表示文字下面没有下划线 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. 添加需求元素
+         2. 添加元素样式
+         3. 微调，调优 -->
+
+    <!-- 1. 获取点击链接的对象
+         2. 绑定对象的单击事件
+         3. 在事件中，设置 p 元素内容的字体大小 -->
+    <div id="fs">
+        <div class="title">
+            <!-- 用链接的方式打开的好处就是，可以有链接的属性和样式 -->
+            
+            <a href="javascript:;">大</a> <!-- 这样写的好处是不会每次点击都跳转 -->
+            <a href="javascript:;">中</a>
+            <a href="javascript:;" class="focus">小</a>
+        </div>
+        <p id="p01">
+            + 在 JS 中也可以直接对元素的样式进行操作
+            要用到 DOM节点操作，对元素进行点语法来控制属性
+            不是只能用 CSS 语句进行操作。
+            + 属性值以字符串形式给出,单位不能省略
+            如果css属性名包含连接符,使用JS访问时
+            一律去掉连接符,改为驼峰. 
+        </p>
+    </div>
+    <script>
+        // 获取链接对象（通过标签名，可以获得节点标签列表）
+        var links=document.getElementsByTagName("a"); // 这样就一下获取了三个a元素
+        // 根据 id 号码获取 p 元素并保存在变量中
+        var p01=document.getElementById("p01")
+
+        // 使用函数的方法来移除原有的样式
+        function clearFocus(){
+            // 遍历整个链接对象集合
+            for(var i=0;i<links.length;i++){
+                // 移除每一个链接对象样式，即把类移除走之后，就没有能控制类的样式了
+                links[i].removeAttribute("class");
+            }
+        }
+
+        // 绑定单击事件
+        // 遍历链接对象，获取每一个对象，遍历的方法不好，不用了
+        // for(var i=0;i<links.length;i++){
+        //     links[i].onclick=function(){
+        //         console.log("OK");
+        //     }
+        // }
+
+        // 通过索引下标，绑定每一个对象
+        links[0].onclick=function(){
+            // 通过 style 对象找到字体大小属性
+            p01.style.fontSize="25px"
+            // 移除全部样式
+            clearFocus();
+            // 设置选中效果样式
+            this.className="focus" // 此处的 this 就相当于是对象本身
+        }
+        links[1].onclick=function(){
+            p01.style.fontSize="18px"
+            clearFocus();
+            this.className="focus"
+        }
+        links[2].onclick=function(){
+            p01.style.fontSize="10px"
+            clearFocus();
+            this.className="focus"
+        }
+
+    </script>
+</body>
+</html>

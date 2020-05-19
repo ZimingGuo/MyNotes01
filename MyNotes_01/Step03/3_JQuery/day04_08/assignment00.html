@@ -1,0 +1,136 @@
+<!-- 作业03：点击按钮更换随机数 -->
+<!-- 思路：
+    1. 使用数组保存内容 
+    2. 数组的元素使用对象
+    3. 根据显示和返回的值定义对象的属性 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业03</title>
+    <style>
+        ul {
+            list-style-type: none;
+            /* 这句要记住，去除表格前面的小圆点 */
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        ul>li {
+            float: left;
+            border: solid 1px red;
+            text-align: center;
+        }
+
+        .top {
+            width: 404px;
+            overflow: hidden;
+        }
+
+        .tip {
+            float: left;
+        }
+
+        .change {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+    <!-- 导入 JQ -->
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="tip">相关书籍</div>
+        <div class="change">换一换</div>
+    </div>
+
+    <!-- 用五项随机出来三项 -->
+    <ul>
+        <!-- <li>
+            <img src="bk0.jpg">
+            <h3><a href="javascript:;">图书 编号0</a></h3>
+            <p>属于第一类</p>
+        </li>
+        <li>
+            <img src="bk1.jpg">
+            <h3><a href="javascript:;">图书 编号1</a></h3>
+            <p>属于第二类</p>
+        </li>
+        <li></li> -->
+    </ul>
+
+
+    <script>
+        // 定义数组，用于保存五项数据，数组内的元素是一个个对象
+        var arrBooks = [
+            {
+                url: "bk0.jpg",
+                name: "第一本图书",
+                class: "第一类图书"
+            },
+            {
+                url: "bk1.jpg",
+                name: "第二本图书",
+                class: "第二类图书"
+            },
+            {
+                url: "bk2.jpg",
+                name: "第三本图书",
+                class: "第三类图书"
+            },
+            {
+                url: "bk3.jpg",
+                name: "第四本图书",
+                class: "第四类图书"
+            },
+            {
+                url: "bk4.jpg",
+                name: "第五本图书",
+                class: "第五类图书"
+            }
+        ]
+        // 至此，已经在数组里保存了内容信息
+
+        // 使用选择器获取换一换按钮(选择类)
+        $(".change").on("click", function () {
+            // 1. 生成两个随机的下标数字 
+            // 2. 根据下标获取数组元素 
+            // 3. 将元素数据显示在页面中 
+            // console.log(createNum(2).toString()); // 生成两个随机数，返回的是一个数组
+
+            // 生成一个两位随机数数组，将生成的数字保存在变量中
+            var _tmpArr = createNum(2);
+
+            var HTML = ""; // 先定义一个空字符串，用于之后存储模版
+            // 对数组进行遍历，获取每一个数据
+            for (var i = 0; i < _tmpArr.length; i++) {
+                // console.log(_tmpArr[i]);
+                // 根据索引号，获取数据 
+                HTML += '<li>'
+                HTML += '<img src="' + arrBooks[_tmpArr[i]].url + '">'
+                HTML += '<h3><a href="javascript:;">' + arrBooks[_tmpArr[i]].name + '</a></h3>'
+                HTML += '<p>' + arrBooks[_tmpArr[i]].class + '</p>'
+                HTML += '</li>'
+            }
+            // console.log(HTML)
+            // 已经得到了字符对象，现在直接向 ul 里面添加就可以了
+            $("ul").html($(HTML));
+        })
+
+        // 定义一个函数，生成指定位数的随机数
+        function createNum(count) {
+            var arrTmp = []; // 先定义一个数组，用于保存生成的随机数
+            for (var i = 0; i < count; i++) {
+                var _index = Math.floor(Math.random() * arrBooks.length)
+                arrTmp.push(_index);
+            }
+            return arrTmp;
+        }
+    </script>
+</body>
+</html>

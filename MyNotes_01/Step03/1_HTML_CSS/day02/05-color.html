@@ -1,0 +1,37 @@
+<!-- 练习5:颜色 & 尺寸 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+    <style>
+        /* 这个 p 元素的设置是针对全局的，所以下面的 p02 也会收到这个元素设置的影响 */
+        p{
+            background-color:rgba(2, 10, 230, 0.5);
+            color: blueviolet;
+            width: 300px;
+            text-align: center;
+        }
+        #p02{
+            width: 100px;
+            height: 100px;
+            /* overflow: hidden; /* 隐藏起来 */ 
+            /* overflow: auto; *//* 自动产生滚动条 */
+            overflow: scroll; /* 自动产生上下和左右的滚动条 */
+        }
+    </style>
+</head>
+<body>
+    <p id="p01">今天是五一假期的第一天</p>
+    <p id="p02">今天是五一假期的第一天今天是五一
+        假期的第一天今天是五一假期的第一
+        天今天是五一假期的第一天今天是五
+        一假期的第一天今天是五一假期的第
+        一天今天是五一假期的第一天今天是
+        五一假期的第一天今天是五一假期的
+        第一天今天是五一假期的第一天今天
+        是五一假期的第一天</p>
+    
+</body>
+</html>

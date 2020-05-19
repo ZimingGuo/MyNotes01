@@ -1,0 +1,36 @@
+<!-- demo01:JS的基础 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo01</title>
+    <script>
+        a = prompt("please enter a number");
+        alert(a);
+        alert("我是顶部");
+        alert("this is another top element.")
+
+        console.log("接收的值是"+a);
+    </script>
+</head>
+<body>
+    <div>
+        <script>
+            document.write("今天是假期的最后一天！")
+        </script>
+    </div>
+    <!-- 用普通的按钮来实现功能 -->
+    <div>
+        <!-- 里面的这句 onclick 就是 JS 代码，即 在属性中使用了JS代码 -->
+        <input onclick="alert('你输入的值有误')" type="button" value="点击一下">
+    </div>
+    <div>
+        <input onclick="document.write('这是清空后的文本')" type="button" value="清空全部内容">
+    </div>
+    <script>
+        alert("我是底部")
+    </script>
+    <script src="JS/JS01.js"></script>
+</body>
+</html>

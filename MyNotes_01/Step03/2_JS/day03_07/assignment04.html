@@ -1,0 +1,23 @@
+<!-- 作业4:正则表达式匹配 -->
+<!-- 匹配邮箱和出生年月 -->
+<!-- 重视正则表达式的练习 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业4</title>
+</head>
+<body>
+    <script>
+        // 创建邮箱地址字符串
+        var email="zhangsan@sina.com"
+
+        // 创建正则表达式
+        var reg01=new RegExp("@","ig")
+
+        var part01=email.match(reg01)
+        console.log(part01.toString())
+    </script>
+</body>
+</html>

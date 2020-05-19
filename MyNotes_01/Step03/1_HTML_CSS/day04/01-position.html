@@ -1,0 +1,36 @@
+<!-- demo01 相对定位 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo01</title>
+    <!-- 因为是选择器，所以应该在 style 里面写 -->
+    <style>
+        div{
+            border: solid 1px red;
+            width: 100px;
+            height: 100px;
+        }
+        /* 表示在集合当中查找某一个子类 括号里填 “第几个” 就相当于是 id 了 */
+        /* div:nth-child(1){} */
+        /* 第二个设置成相对于原始位置的偏移 */
+        div:nth-child(2){
+            position: relative; /* 只是设置了相对位置，还没有设置偏移量 */
+            left: 8px;
+        }
+        /* 相对偏移都是相对于上一个元素进行的偏移，上一个上一个 */
+        /* 偏移空出来的部分是不能够放东西的 */
+        div:nth-child(3){
+            position: relative;
+            top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 补充一个选择器：通过元素的伪类选择器获取相同元素的某个元素 -->
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

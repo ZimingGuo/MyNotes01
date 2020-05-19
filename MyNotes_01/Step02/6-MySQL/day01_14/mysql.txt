@@ -1,0 +1,15 @@
+练习：
+1）创建数据库 grade
+2）数据库中创建表：student
+3）表字段如下：
+    id  name  age  hobby  score commment
+4）插入若干数据
+    age 4-16
+    score：0-100
+    hobby：football computer running  baskerball
+5）查找
+    1）查找所有年龄不到10岁 or 大于14岁的同学
+    2）查找兴趣爱好中包含 computer 的同学
+    3）查找年龄大于15，且喜欢足球的同学
+    4）查找不及格 且兴趣爱好不为空的同学
+    5）查找成绩大于 90 分的同学，只看姓名 & 成绩
